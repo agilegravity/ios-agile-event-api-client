@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		DFCBE09B2AD08CE100EE55CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0702AD08CE000EE55CA /* ContentView.swift */; };
 		DFCBE09C2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
 		DFCBE09D2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
+		DFCBE0B72AD0967F00EE55CA /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */; };
+		DFCBE0BD2AD096A500EE55CA /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		DFCBE0912AD08CE100EE55CA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCBE0952AD08CE100EE55CA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		DFCBE0972AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCBE0B02AD0954600EE55CA /* codegen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = codegen; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCBE0B72AD0967F00EE55CA /* OpenAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCBE0BD2AD096A500EE55CA /* OpenAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +91,14 @@
 		DFCBE0692AD08CE000EE55CA = {
 			isa = PBXGroup;
 			children = (
+				DFCBE0B02AD0954600EE55CA /* codegen */,
 				DFCBE06E2AD08CE000EE55CA /* Shared */,
 				DFCBE0782AD08CE100EE55CA /* iOS */,
 				DFCBE07F2AD08CE100EE55CA /* macOS */,
 				DFCBE0892AD08CE100EE55CA /* Tests iOS */,
 				DFCBE0942AD08CE100EE55CA /* Tests macOS */,
 				DFCBE0772AD08CE100EE55CA /* Products */,
+				DFCBE0B52AD0967F00EE55CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +158,13 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		DFCBE0B52AD0967F00EE55CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +181,9 @@
 			dependencies = (
 			);
 			name = "agile-ai-event-ai (iOS)";
+			packageProductDependencies = (
+				DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */,
+			);
 			productName = "agile-ai-event-ai (iOS)";
 			productReference = DFCBE0762AD08CE100EE55CA /* agile-ai-event-ai.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +201,9 @@
 			dependencies = (
 			);
 			name = "agile-ai-event-ai (macOS)";
+			packageProductDependencies = (
+				DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */,
+			);
 			productName = "agile-ai-event-ai (macOS)";
 			productReference = DFCBE07E2AD08CE100EE55CA /* agile-ai-event-ai.app */;
 			productType = "com.apple.product-type.application";
@@ -686,6 +706,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFCBE06A2AD08CE000EE55CA /* Project object */;
 }

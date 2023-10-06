@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFCBE08B2AD08CE100EE55CA /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE08A2AD08CE100EE55CA /* Tests_iOS.swift */; };
+		DFCBE0962AD08CE100EE55CA /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0952AD08CE100EE55CA /* Tests_macOS.swift */; };
+		DFCBE0982AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */; };
+		DFCBE0992AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */; };
+		DFCBE09A2AD08CE100EE55CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0702AD08CE000EE55CA /* ContentView.swift */; };
+		DFCBE09B2AD08CE100EE55CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0702AD08CE000EE55CA /* ContentView.swift */; };
+		DFCBE09C2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
+		DFCBE09D2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFCBE0872AD08CE100EE55CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFCBE06A2AD08CE000EE55CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFCBE0752AD08CE100EE55CA;
+			remoteInfo = "agile-ai-event-ai (iOS)";
+		};
+		DFCBE0922AD08CE100EE55CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFCBE06A2AD08CE000EE55CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFCBE07D2AD08CE100EE55CA;
+			remoteInfo = "agile-ai-event-ai (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agile_ai_event_aiApp.swift; sourceTree = "<group>"; };
+		DFCBE0702AD08CE000EE55CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFCBE0712AD08CE100EE55CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFCBE0762AD08CE100EE55CA /* agile-ai-event-ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agile-ai-event-ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCBE0792AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCBE07E2AD08CE100EE55CA /* agile-ai-event-ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agile-ai-event-ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCBE0802AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCBE0812AD08CE100EE55CA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DFCBE0862AD08CE100EE55CA /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCBE08A2AD08CE100EE55CA /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		DFCBE08C2AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCBE0912AD08CE100EE55CA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCBE0952AD08CE100EE55CA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		DFCBE0972AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFCBE0732AD08CE100EE55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE07B2AD08CE100EE55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE0832AD08CE100EE55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE08E2AD08CE100EE55CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFCBE0692AD08CE000EE55CA = {
+			isa = PBXGroup;
+			children = (
+				DFCBE06E2AD08CE000EE55CA /* Shared */,
+				DFCBE0782AD08CE100EE55CA /* iOS */,
+				DFCBE07F2AD08CE100EE55CA /* macOS */,
+				DFCBE0892AD08CE100EE55CA /* Tests iOS */,
+				DFCBE0942AD08CE100EE55CA /* Tests macOS */,
+				DFCBE0772AD08CE100EE55CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFCBE06E2AD08CE000EE55CA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */,
+				DFCBE0702AD08CE000EE55CA /* ContentView.swift */,
+				DFCBE0712AD08CE100EE55CA /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DFCBE0772AD08CE100EE55CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE0762AD08CE100EE55CA /* agile-ai-event-ai.app */,
+				DFCBE07E2AD08CE100EE55CA /* agile-ai-event-ai.app */,
+				DFCBE0862AD08CE100EE55CA /* Tests iOS.xctest */,
+				DFCBE0912AD08CE100EE55CA /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFCBE0782AD08CE100EE55CA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE0792AD08CE100EE55CA /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		DFCBE07F2AD08CE100EE55CA /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE0802AD08CE100EE55CA /* Info.plist */,
+				DFCBE0812AD08CE100EE55CA /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		DFCBE0892AD08CE100EE55CA /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE08A2AD08CE100EE55CA /* Tests_iOS.swift */,
+				DFCBE08C2AD08CE100EE55CA /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		DFCBE0942AD08CE100EE55CA /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBE0952AD08CE100EE55CA /* Tests_macOS.swift */,
+				DFCBE0972AD08CE100EE55CA /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFCBE0752AD08CE100EE55CA /* agile-ai-event-ai (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCBE0A02AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "agile-ai-event-ai (iOS)" */;
+			buildPhases = (
+				DFCBE0722AD08CE100EE55CA /* Sources */,
+				DFCBE0732AD08CE100EE55CA /* Frameworks */,
+				DFCBE0742AD08CE100EE55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "agile-ai-event-ai (iOS)";
+			productName = "agile-ai-event-ai (iOS)";
+			productReference = DFCBE0762AD08CE100EE55CA /* agile-ai-event-ai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFCBE07D2AD08CE100EE55CA /* agile-ai-event-ai (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCBE0A32AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "agile-ai-event-ai (macOS)" */;
+			buildPhases = (
+				DFCBE07A2AD08CE100EE55CA /* Sources */,
+				DFCBE07B2AD08CE100EE55CA /* Frameworks */,
+				DFCBE07C2AD08CE100EE55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "agile-ai-event-ai (macOS)";
+			productName = "agile-ai-event-ai (macOS)";
+			productReference = DFCBE07E2AD08CE100EE55CA /* agile-ai-event-ai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFCBE0852AD08CE100EE55CA /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCBE0A62AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				DFCBE0822AD08CE100EE55CA /* Sources */,
+				DFCBE0832AD08CE100EE55CA /* Frameworks */,
+				DFCBE0842AD08CE100EE55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFCBE0882AD08CE100EE55CA /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = DFCBE0862AD08CE100EE55CA /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DFCBE0902AD08CE100EE55CA /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCBE0A92AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				DFCBE08D2AD08CE100EE55CA /* Sources */,
+				DFCBE08E2AD08CE100EE55CA /* Frameworks */,
+				DFCBE08F2AD08CE100EE55CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFCBE0932AD08CE100EE55CA /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = DFCBE0912AD08CE100EE55CA /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFCBE06A2AD08CE000EE55CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DFCBE0752AD08CE100EE55CA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DFCBE07D2AD08CE100EE55CA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DFCBE0852AD08CE100EE55CA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DFCBE0752AD08CE100EE55CA;
+					};
+					DFCBE0902AD08CE100EE55CA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DFCBE07D2AD08CE100EE55CA;
+					};
+				};
+			};
+			buildConfigurationList = DFCBE06D2AD08CE000EE55CA /* Build configuration list for PBXProject "agile-ai-event-ai" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFCBE0692AD08CE000EE55CA;
+			productRefGroup = DFCBE0772AD08CE100EE55CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFCBE0752AD08CE100EE55CA /* agile-ai-event-ai (iOS) */,
+				DFCBE07D2AD08CE100EE55CA /* agile-ai-event-ai (macOS) */,
+				DFCBE0852AD08CE100EE55CA /* Tests iOS */,
+				DFCBE0902AD08CE100EE55CA /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFCBE0742AD08CE100EE55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE09C2AD08CE100EE55CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE07C2AD08CE100EE55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE09D2AD08CE100EE55CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE0842AD08CE100EE55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE08F2AD08CE100EE55CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFCBE0722AD08CE100EE55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE09A2AD08CE100EE55CA /* ContentView.swift in Sources */,
+				DFCBE0982AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE07A2AD08CE100EE55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE09B2AD08CE100EE55CA /* ContentView.swift in Sources */,
+				DFCBE0992AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE0822AD08CE100EE55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE08B2AD08CE100EE55CA /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCBE08D2AD08CE100EE55CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCBE0962AD08CE100EE55CA /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFCBE0882AD08CE100EE55CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFCBE0752AD08CE100EE55CA /* agile-ai-event-ai (iOS) */;
+			targetProxy = DFCBE0872AD08CE100EE55CA /* PBXContainerItemProxy */;
+		};
+		DFCBE0932AD08CE100EE55CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFCBE07D2AD08CE100EE55CA /* agile-ai-event-ai (macOS) */;
+			targetProxy = DFCBE0922AD08CE100EE55CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DFCBE09E2AD08CE100EE55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DFCBE09F2AD08CE100EE55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DFCBE0A12AD08CE100EE55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.agile-ai-event-ai";
+				PRODUCT_NAME = "agile-ai-event-ai";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFCBE0A22AD08CE100EE55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.agile-ai-event-ai";
+				PRODUCT_NAME = "agile-ai-event-ai";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFCBE0A42AD08CE100EE55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.agile-ai-event-ai";
+				PRODUCT_NAME = "agile-ai-event-ai";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DFCBE0A52AD08CE100EE55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.agile-ai-event-ai";
+				PRODUCT_NAME = "agile-ai-event-ai";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DFCBE0A72AD08CE100EE55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "agile-ai-event-ai (iOS)";
+			};
+			name = Debug;
+		};
+		DFCBE0A82AD08CE100EE55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "agile-ai-event-ai (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFCBE0AA2AD08CE100EE55CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "agile-ai-event-ai (macOS)";
+			};
+			name = Debug;
+		};
+		DFCBE0AB2AD08CE100EE55CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agilegravity.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "agile-ai-event-ai (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFCBE06D2AD08CE000EE55CA /* Build configuration list for PBXProject "agile-ai-event-ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCBE09E2AD08CE100EE55CA /* Debug */,
+				DFCBE09F2AD08CE100EE55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCBE0A02AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "agile-ai-event-ai (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCBE0A12AD08CE100EE55CA /* Debug */,
+				DFCBE0A22AD08CE100EE55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCBE0A32AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "agile-ai-event-ai (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCBE0A42AD08CE100EE55CA /* Debug */,
+				DFCBE0A52AD08CE100EE55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCBE0A62AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCBE0A72AD08CE100EE55CA /* Debug */,
+				DFCBE0A82AD08CE100EE55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCBE0A92AD08CE100EE55CA /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCBE0AA2AD08CE100EE55CA /* Debug */,
+				DFCBE0AB2AD08CE100EE55CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFCBE06A2AD08CE000EE55CA /* Project object */;
+}

@@ -6,159 +6,123 @@
 //
 
 import SwiftUI
-import OpenAPIClient
+
 import Foundation
+
+
 struct ContentView: View {
-    @State private var response = ""
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-        
-        Button(action: sendPost) {
-            Text("Send Post")
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-        }
-    }
-    func sendPost() {
-        
-
-        let channelId = "channelId_example" // String | channelId
-        let login = Login(isAnonym: false, passwordLessToken: "passwordLessToken_example") // Login |
-        let apiSecret = "apiSecret_example" // String | ApiSecret (optional)
-
-        LoginAPI.login(channelId: channelId, login: login, apiSecret: apiSecret) { (response, error) in
-            guard error == nil else {
-                print(error)
-                return
-            }
-
-            if (response) {
-                dump(response)
-            }
-        }
-//        let post = Post(title: "Hello, world!", body: "This is a test post.")
-//
-//        guard let url = URL(string: "https://api.example.com/posts") else {
-//            print("Invalid URL")
-//            return
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//        do {
-//            let jsonData = try JSONEncoder().encode(post)
-//            request.httpBody = jsonData
-//        } catch {
-//            print("Error encoding post object:", error)
-//            return
-//        }
-//
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard let data = data, error == nil else {
-//                print("Error sending request:", error ?? "No error")
-//                return
-//            }
-//
-//            DispatchQueue.main.async {
-//                self.response = String(data: data, encoding: .utf8) ?? "No data"
-//            }
-//        }
-//        task.resume()
-    }
+    @State private var currentMessage: String = ""
+    @State private var bricks: [APIClient.Brick] = []
     
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    private var eventApiClient: APIClient
+    
+    
+    init( ) {
+        self.eventApiClient  = APIClient(
+            channelId: "6520d1d59b38791b72743b38",
+            apiSecret: "77^BDQhbOhx7#$FGvFqqy$jKG1Bn7s9CWWIT8MlVtZBGtto%z"
+        )
+        let payload = APIClient.EventPayload(
+            eventCategory: "a",
+            eventAction: "a",
+            source: "a"
+        )
+        
+        let event = APIClient.EventBody(
+            name: "getInitialData",
+            text:  currentMessage,
+            payload: payload
+        )
+        //
+        //                self.eventApiClient.eventAPICall( event: [event],  completion:  { brickResponse, error in brickResponse
+        //                    guard let brickResponse = brickResponse, error == nil else {
+        //                        print("Error calling the second API: \(error!.localizedDescription)")
+        //                        return
+        //                    }
+        //                    self.bricks += brickResponse
+        //                    print("Response from the second API: \(brickResponse)")
+        //                })
     }
-}
-
-
-struct Post: Codable {
-var title: String
-var body: String
-}
-/*
-import SwiftUI
-import Foundation
-
-struct ContentView: View {
-    @State private var title = ""
-    @State private var body = ""
-    @State private var response = ""
     
     var body: some View {
         VStack {
-            TextField("Title", text: $title)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            TextField("Body", text: $body)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            Button(action: sendPost) {
-                Text("Send Post")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(bricks, id: \.id) { brick in
+                        switch brick.content.data {
+                        case .object(let data):
+                            if let content = data["content"] {
+                                switch content {
+                                case .string(let contentString):
+                                    Text(contentString)
+                                default:
+                                    EmptyView()
+                                    
+                                }
+                            }
+                        default:
+                            EmptyView()
+                        }
+                    }
+                }
+                
             }
             
-            Text(response)
-                .padding()
+            
+            HStack {
+                TextField("Type a message", text: $currentMessage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                
+                Button(action: {
+                    sendPost()
+                }) {
+                    Text("Send")
+                        .padding(.horizontal)
+                }
+            }
         }
-        .padding()
     }
-    
     func sendPost() {
-        let post = Post(title: title, body: body)
-        
-        guard let url = URL(string: "https://api.example.com/posts") else {
-            print("Invalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let jsonData = try JSONEncoder().encode(post)
-            request.httpBody = jsonData
-        } catch {
-            print("Error encoding post object:", error)
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error sending request:", error ?? "No error")
-                return
-            }
+        if !currentMessage.trimmingCharacters(in: .whitespaces).isEmpty {
             
-            DispatchQueue.main.async {
-                self.response = String(data: data, encoding: .utf8) ?? "No data"
+            
+            
+            let payload = APIClient.EventPayload(
+                eventCategory: "a",
+                eventAction: "a",
+                source: "a"
+            )
+            
+            let event = APIClient.EventBody(
+                name: "prompt",
+                text:  currentMessage,
+                payload: payload
+            )
+            
+            eventApiClient.eventAPICall( event: [event] , completion:  { brickResponse, error in brickResponse
+                guard let brickResponse = brickResponse, error == nil else {
+                    print("Error calling the second API: \(error!.localizedDescription)")
+                    return
+                }
+                self.bricks += brickResponse
+                print("Response from the second API: \(brickResponse)")
             }
+            )
+            
+            currentMessage = ""
         }
-        task.resume()
+        
     }
 }
 
-struct Post: Codable {
-    var title: String
-    var body: String
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-*/
+
+
+
+

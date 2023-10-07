@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,8 @@
 		DFCBE09B2AD08CE100EE55CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0702AD08CE000EE55CA /* ContentView.swift */; };
 		DFCBE09C2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
 		DFCBE09D2AD08CE100EE55CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCBE0712AD08CE100EE55CA /* Assets.xcassets */; };
-		DFCBE0B72AD0967F00EE55CA /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */; };
-		DFCBE0BD2AD096A500EE55CA /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */; };
+		DFCBE0CB2AD182C500EE55CA /* EventApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0CA2AD182C500EE55CA /* EventApiClient.swift */; };
+		DFCBE0CC2AD182C500EE55CA /* EventApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBE0CA2AD182C500EE55CA /* EventApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		DFCBE0912AD08CE100EE55CA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCBE0952AD08CE100EE55CA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		DFCBE0972AD08CE100EE55CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFCBE0B02AD0954600EE55CA /* codegen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = codegen; sourceTree = "<group>"; };
+		DFCBE0CA2AD182C500EE55CA /* EventApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFCBE0B72AD0967F00EE55CA /* OpenAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFCBE0BD2AD096A500EE55CA /* OpenAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +89,6 @@
 		DFCBE0692AD08CE000EE55CA = {
 			isa = PBXGroup;
 			children = (
-				DFCBE0B02AD0954600EE55CA /* codegen */,
 				DFCBE06E2AD08CE000EE55CA /* Shared */,
 				DFCBE0782AD08CE100EE55CA /* iOS */,
 				DFCBE07F2AD08CE100EE55CA /* macOS */,
@@ -105,9 +102,10 @@
 		DFCBE06E2AD08CE000EE55CA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */,
 				DFCBE0702AD08CE000EE55CA /* ContentView.swift */,
+				DFCBE06F2AD08CE000EE55CA /* agile_ai_event_aiApp.swift */,
 				DFCBE0712AD08CE100EE55CA /* Assets.xcassets */,
+				DFCBE0CA2AD182C500EE55CA /* EventApiClient.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -182,7 +180,6 @@
 			);
 			name = "agile-ai-event-ai (iOS)";
 			packageProductDependencies = (
-				DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */,
 			);
 			productName = "agile-ai-event-ai (iOS)";
 			productReference = DFCBE0762AD08CE100EE55CA /* agile-ai-event-ai.app */;
@@ -202,7 +199,6 @@
 			);
 			name = "agile-ai-event-ai (macOS)";
 			packageProductDependencies = (
-				DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */,
 			);
 			productName = "agile-ai-event-ai (macOS)";
 			productReference = DFCBE07E2AD08CE100EE55CA /* agile-ai-event-ai.app */;
@@ -278,6 +274,8 @@
 				Base,
 			);
 			mainGroup = DFCBE0692AD08CE000EE55CA;
+			packageReferences = (
+			);
 			productRefGroup = DFCBE0772AD08CE100EE55CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCBE0CB2AD182C500EE55CA /* EventApiClient.swift in Sources */,
 				DFCBE09A2AD08CE100EE55CA /* ContentView.swift in Sources */,
 				DFCBE0982AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */,
 			);
@@ -337,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCBE0CC2AD182C500EE55CA /* EventApiClient.swift in Sources */,
 				DFCBE09B2AD08CE100EE55CA /* ContentView.swift in Sources */,
 				DFCBE0992AD08CE100EE55CA /* agile_ai_event_aiApp.swift in Sources */,
 			);
@@ -706,17 +706,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DFCBE0B62AD0967F00EE55CA /* OpenAPIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OpenAPIClient;
-		};
-		DFCBE0BC2AD096A500EE55CA /* OpenAPIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OpenAPIClient;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFCBE06A2AD08CE000EE55CA /* Project object */;
 }

@@ -10,20 +10,20 @@ import Foundation
 class APIClient {
     private var BASE_URL: String
     private var access_token: String?
-    
+
     private var channelId: String
     private var apiSecret: String
-    
+
     private var userId: String?
     private var topicId: String?
-    
+
     init(channelId: String, apiSecret: String, baseUrl: String? =  "https://dev-agile-v3-agile-bai-event.agilegravity.com") {
         self.BASE_URL = baseUrl ?? "https://dev-agile-v3-agile-bai-event.agilegravity.com"
         self.channelId = channelId
         self.apiSecret = apiSecret
     }
-    
-    
+
+
     struct Login: Codable {
         var isAnonym: Bool
     }
@@ -34,13 +34,13 @@ class APIClient {
         var userID: String?
         var channelId: String
     }
-    
+
     private func ensureLogin(completion: @escaping () -> Void) {
         if access_token != nil {
             completion()
             return
         }
-        
+
         loginAPICall( completion:  { data, error in
             guard let data = data, error == nil else {
                 print("Error sending request:", error ?? "No error")
@@ -51,16 +51,16 @@ class APIClient {
             completion()
         })
     }
-   
+
     func loginAPICall( completion: @escaping (Token?, Error?) -> Void) {
         let url = URL(string: "\(self.BASE_URL)/api/v1/channels/\(self.channelId)/login")!
-        print("login to ",url)
+
         let post = Login(isAnonym: true)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(self.apiSecret, forHTTPHeaderField: "ApiSecret")
-        
+
         do {
             let jsonData = try JSONEncoder().encode(post)
             request.httpBody = jsonData
@@ -68,7 +68,7 @@ class APIClient {
             print("Error encoding post object:", error)
             return
         }
-        
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(nil, error)
@@ -79,25 +79,25 @@ class APIClient {
                 return
             }
             do {
-                
+
                 let token = try JSONDecoder().decode(Token.self, from: data)
-                
-                
+
+
                 completion(token, nil)
-                
+
             } catch {
                 print("Error parsing response: \(error)")
                 return
             }
         }
-        
+
         task.resume()
     }
-    
+
     struct Session: Codable {
         var userId: String
     }
-    
+
     struct SessionResponse : Codable {
         var userId: String
         var topicId: String
@@ -108,31 +108,29 @@ class APIClient {
             completion()
             return
         }
-        
+
         sessionAPICall( completion:  { data, error in
             guard let data = data, error == nil else {
                 print("Error sending request:", error ?? "No error")
                 return
             }
-            print("sessoin response", data)
             self.topicId = data.topicId
             completion()
         })
     }
-    
+
     func sessionAPICall( completion: @escaping (SessionResponse?, Error?) -> Void) {
         ensureLogin {
             let url = URL(string: "\(self.BASE_URL)/api/v1/channels/\(self.channelId)/session")!
-            print("get sesion from ",url)
-            
+
             let post = Session(userId: self.userId!)
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(self.apiSecret, forHTTPHeaderField: "ApiSecret")
             request.setValue(self.access_token, forHTTPHeaderField: "Authorization")
-            
-            
+
+
             do {
                 let jsonData = try JSONEncoder().encode(post)
                 request.httpBody = jsonData
@@ -140,7 +138,7 @@ class APIClient {
                 print("Error encoding post object:", error)
                 return
             }
-            
+
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     completion(nil, error)
@@ -150,29 +148,29 @@ class APIClient {
                     completion(nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data is nil"]))
                     return
                 }
-                
+
                 do {
-                    
+
                     let sessionResp = try JSONDecoder().decode(SessionResponse.self, from: data)
-                    
+
                     print("sessoin response", data)
                     completion(sessionResp, nil)
                 } catch {
                     print("Error parsing response: \(error)")
                     return
                 }
-                
+
             }
-            
+
             task.resume()
         }
     }
-    
-    
-    
 
-    
-    
+
+
+
+
+
     struct EventPayload  : Codable {
         var eventCategory: String
         var eventAction: String
@@ -218,7 +216,7 @@ class APIClient {
                 self = .object(object)
                 return
             }
-            
+
             if let array = try? container.decode([JSONValue].self) {
                 self = .array(array)
                 return
@@ -227,7 +225,7 @@ class APIClient {
             throw DecodingError.typeMismatch(JSONValue.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Mismatched Types"))
         }
     }
-    
+
     struct Brick: Decodable, Hashable, Equatable  {
         func hash(into hasher: inout Hasher) {
             hasher.combine(id)
@@ -249,7 +247,7 @@ class APIClient {
         let v: Int
         let createdAt: String
         let updatedAt: String
-        
+
         enum CodingKeys: String, CodingKey {
             case creator, content, eventsource, trackingUrlParams, owner, topic, channel, appliedDsgvoDataPrivacyRules
             case id = "_id"
@@ -257,12 +255,12 @@ class APIClient {
             case v = "__v"
             case createdAt, updatedAt
         }
-        
+
         struct Content: Decodable {
             let schemaRef: String
             let data: JSONValue
         }
-        
+
         struct DataContent: Decodable {
             let role: String?
             let content: String?
@@ -274,13 +272,13 @@ class APIClient {
         let dataStoreTransactions: DataStoreTransactions
         let scoringKeys: [String]
         let content: OptionContent
-        
+
         let produceEvent: ProduceEvent
         let id: String
         let microIntends: [String]
         let triggedByMicroIntends: [String]
         let removeFromAgilePoolRules: [String]
-        
+
         enum CodingKeys: String, CodingKey {
             case data, dataStoreTransactions, scoringKeys, content, produceEvent
             case id = "_id"
@@ -290,7 +288,7 @@ class APIClient {
             let schemaRef: String
             let data: JSONValue
         }
-       
+
         struct DataStoreTransactions: Decodable {
             let add: [String]
             let remove: [String]
@@ -299,24 +297,22 @@ class APIClient {
             let dataStoreTransactions: DataStoreTransactions
         }
     }
-    
-   
 
-    
+
+
+
     func eventAPICall( event: [EventBody], completion: @escaping ([Brick]?, Error?) -> Void) {
         ensureLSession {
-            
-            print("eventApi", self.topicId, self.userId)
+
             let url = URL(string: "\(self.BASE_URL)/api/v1/channels/\(self.channelId)/users/\(self.userId!)/topics/\(self.topicId!)/events")!
-            print("send event to ",url)
-            
+
             let post = event
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(self.apiSecret, forHTTPHeaderField: "ApiSecret")
             request.setValue(self.access_token, forHTTPHeaderField: "Authorization")
-            
+
             do {
                 let jsonData = try JSONEncoder().encode(post)
                 request.httpBody = jsonData
@@ -324,7 +320,7 @@ class APIClient {
                 print("Error encoding post object:", error)
                 return
             }
-            
+
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     completion(nil, error)
@@ -335,20 +331,19 @@ class APIClient {
                     return
                 }
                 do {
-                    print("bricks response", String(data: data, encoding: .utf8))
                     let brickResp = try JSONDecoder().decode([Brick].self, from: data)
-                    
+
                     completion(brickResp, nil)
                 } catch {
                     print("Error parsing response: \(error)")
                     return
                 }
-                
+
             }
-            
+
             task.resume()
         }
     }
-    
-    
+
+
 }

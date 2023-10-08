@@ -87,17 +87,14 @@ struct ContentView: View {
         if !currentMessage.trimmingCharacters(in: .whitespaces).isEmpty {
             
             
-            
-            let payload = APIClient.EventPayload(
-                eventCategory: "a",
-                eventAction: "a",
-                source: "a"
-            )
-            
             let event = APIClient.EventBody(
                 name: "prompt",
                 text:  currentMessage,
-                payload: payload
+                payload:  APIClient.EventPayload(
+                    eventCategory: "userMesssgage",
+                    eventAction: "Send",
+                    source: "IosApp"
+                )
             )
             
             eventApiClient.eventAPICall( event: [event] , completion:  { brickResponse, error in brickResponse
@@ -107,8 +104,7 @@ struct ContentView: View {
                 }
                 self.bricks += brickResponse
                 print("Response from the second API: \(brickResponse)")
-            }
-            )
+            })
             
             currentMessage = ""
         }

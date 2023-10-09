@@ -32,7 +32,7 @@ struct ContentView: View {
         //     name: "getInitialData",
         //     text:  currentMessage,
         //     payload: payload
-        )
+        //  )
         //
         //                self.eventApiClient.eventAPICall( event: [event],  completion:  { brickResponse, error in brickResponse
         //                    guard let brickResponse = brickResponse, error == nil else {

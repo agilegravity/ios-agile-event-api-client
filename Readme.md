@@ -1,43 +1,70 @@
-# EventApiClient
+### README for Agile AI Event AI SDK
 
-The EventApiClient is a Swift client, designed for the seamless and secure integration of the agilegravity event API into iOS applications. It encapsulates the Login and Session and provides the event Api call functionality
+# Agile AI Event AI SDK
 
-git url: https://github.com/agilegravity/ios-agile-event-api-client
+Agile AI Event AI SDK provides a simplified way to integrate agilegravity's event API into your iOS applications. It helps developers manage authentication and sessions, facilitating efficient and secure access to the event API.
 
+## Installation
 
-## Key Features of EventApiClient:
+### Prerequisites
 
-* Authentication Management:
-The client skillfully encapsulates the Login and Session APIs. It ensures that all interactions with the event API are authenticated, promoting a secure user experience and data integrity.
-* Ease of Integration:
-EventApiClient is designed with simplicity and effectiveness in mind. Its architecture allows for straightforward integration, making it a developer-friendly tool for incorporating the agilegravity event API into iOS applications.
-* Foundational Work:
-While this is a proof of concept, it serves as a significant stepping stone for future developments and enhancements. It provides insights and a practical perspective on the potential and efficiency of integrating the event API.
+- iOS 11.0+
+- Xcode 11+
+- Swift 5.1+
 
+Include `EventApiClient.swift` into your project to access the functionalities provided by the SDK.
 
-As we proceed with the development, we are committed to refining and enhancing EventApiClient to meet the evolving demands and expectations. We envision this client to not only be a tool for integration but also a catalyst for optimizing the performance and capabilities of iOS applications utilizing the agilegravity event API.
+## Usage
 
+### Initialization
 
-## Usage for the EventApiClient
+Initialize `APIClient` with your `channelId`, `apiSecret`, and optionally a custom `baseUrl`.
 
 ```swift
-Usage for the EventApiClient
-event = APIClient.EventBody(
-    name: "prompt",
-    text:  currentMessage,
-    payload:  APIClient.EventPayload(
-        eventCategory: "userMesssgage",
-        eventAction: "Send",
-        source: "IosApp"
-    )
-)
+let apiClient = APIClient(channelId: "yourChannelId", apiSecret: "yourApiSecret")
+```
 
-eventApiClient.eventAPICall( event: [event] , completion:  { brickResponse, error in brickResponse
-    guard let brickResponse = brickResponse, error == nil else {
-        print("Error calling the second API: \(error!.localizedDescription)")
+### Authentication
+
+The SDK ensures users are authenticated before making requests to the event API. The authentication process is handled internally, so developers don't need to manage it manually.
+
+### Sessions
+
+Similar to authentication, session management is also handled within the SDK. It ensures that a session is active and valid before proceeding with API requests.
+
+### Fetching Event Data
+
+Use the `eventAPICall` function to fetch event data. Provide an array of `EventBody` and a completion handler to process the response.
+
+```swift
+let eventBody = EventBody(name: "eventName", text: "eventText", payload: nil)
+apiClient.eventAPICall(event: [eventBody]) { bricks, error in
+    if let error = error {
+        print("Error:", error)
         return
     }
-    self.bricks += brickResponse
-})
 
+    if let bricks = bricks {
+        print("Fetched Bricks:", bricks)
+    }
+}
 ```
+
+`Brick` data returned from the event API is a mix of structured data and custom use-case payloads. The `content.data` field contains the custom use-case payload, and `content.schemaRef` provides information on the type of data contained within it.
+
+### Error Handling
+
+Errors are returned via the completion handlers, providing an opportunity to handle API and network-related errors gracefully within your application.
+
+## Contributing
+
+Feel free to contribute to the development of this SDK. Open an issue or submit pull requests.
+
+
+---
+
+**Note:** Replace placeholders like `"yourChannelId"` and `"yourApiSecret"` with your actual `channelId` and `apiSecret`. Also, handle the received `bricks` and `error` as per your application's requirements.
+
+### For Contributors and Developers
+
+This SDK is designed to be straightforward and easily integrated into iOS applications. It handles complex tasks like authentication and session management internally, allowing developers to focus on utilizing the event data returned by the API. We encourage contributions to make this tool more efficient and versatile, catering to a broader range of use cases and scenarios.

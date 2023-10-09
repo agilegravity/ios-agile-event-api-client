@@ -22,16 +22,16 @@ struct ContentView: View {
             channelId: "<YOUR_CHANNEL_ID>",
             apiSecret: "<YOUR_API_SECRET>"
         )
-        let payload = APIClient.EventPayload(
-            eventCategory: "a",
-            eventAction: "a",
-            source: "a"
-        )
+        // let payload = APIClient.EventPayload(
+        //     eventCategory: "userMesssgage",
+        //     eventAction: "Send",
+        //     source: "IosApp"
+        // )
 
-        let event = APIClient.EventBody(
-            name: "getInitialData",
-            text:  currentMessage,
-            payload: payload
+        // let event = APIClient.EventBody(
+        //     name: "getInitialData",
+        //     text:  currentMessage,
+        //     payload: payload
         )
         //
         //                self.eventApiClient.eventAPICall( event: [event],  completion:  { brickResponse, error in brickResponse

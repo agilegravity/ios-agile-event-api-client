@@ -13,21 +13,21 @@ import Foundation
 struct ContentView: View {
     @State private var currentMessage: String = ""
     @State private var bricks: [APIClient.Brick] = []
-    
+
     private var eventApiClient: APIClient
-    
-    
+
+
     init( ) {
         self.eventApiClient  = APIClient(
-            channelId: "6520d1d59b38791b72743b38",
-            apiSecret: "77^BDQhbOhx7#$FGvFqqy$jKG1Bn7s9CWWIT8MlVtZBGtto%z"
+            channelId: "<YOUR_CHANNEL_ID>",
+            apiSecret: "<YOUR_API_SECRET>"
         )
         let payload = APIClient.EventPayload(
             eventCategory: "a",
             eventAction: "a",
             source: "a"
         )
-        
+
         let event = APIClient.EventBody(
             name: "getInitialData",
             text:  currentMessage,
@@ -43,7 +43,7 @@ struct ContentView: View {
         //                    print("Response from the second API: \(brickResponse)")
         //                })
     }
-    
+
     var body: some View {
         VStack {
             ScrollView {
@@ -57,7 +57,7 @@ struct ContentView: View {
                                     Text(contentString)
                                 default:
                                     EmptyView()
-                                    
+
                                 }
                             }
                         default:
@@ -65,15 +65,15 @@ struct ContentView: View {
                         }
                     }
                 }
-                
+
             }
-            
-            
+
+
             HStack {
                 TextField("Type a message", text: $currentMessage)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
-                
+
                 Button(action: {
                     sendPost()
                 }) {
@@ -85,8 +85,8 @@ struct ContentView: View {
     }
     func sendPost() {
         if !currentMessage.trimmingCharacters(in: .whitespaces).isEmpty {
-            
-            
+
+
             let event = APIClient.EventBody(
                 name: "prompt",
                 text:  currentMessage,
@@ -96,7 +96,7 @@ struct ContentView: View {
                     source: "IosApp"
                 )
             )
-            
+
             eventApiClient.eventAPICall( event: [event] , completion:  { brickResponse, error in brickResponse
                 guard let brickResponse = brickResponse, error == nil else {
                     print("Error calling the second API: \(error!.localizedDescription)")
@@ -105,10 +105,10 @@ struct ContentView: View {
                 self.bricks += brickResponse
                 print("Response from the second API: \(brickResponse)")
             })
-            
+
             currentMessage = ""
         }
-        
+
     }
 }
 
